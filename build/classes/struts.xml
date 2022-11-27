@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.custom.i18n.resources"
+		value="MessageData_ja_JP" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DyanamicMethodnvocation"
+		value="true" />
+	<constant name="struts.devMode" value="false" />
+
+
+	<package name="BookManageSystem" extends="struts-default">
+
+		<action name="login" class="action.LoginAction" method="execute">
+			<result name="error">/login.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="success" type="chain">BookListsAction</result>
+		</action>
+
+		<action name="BookListsAction" class="action.BookListsAction" method="search">
+			<result name="error">/jsp/BookListsInfo.jsp</result>
+			<result name="success">/jsp/BookListsInfo.jsp</result>
+		</action>
+
+		<action name="toSearch" class="action.BookListsAction" method="search">
+			<result name="success" type="chain">BookListsAction</result>
+		</action>
+
+		<action name="ToAdd" class="action.BookListsAction" method="toShow">
+			<result name="success">/jsp/BookBorrow.jsp</result>
+		</action>
+
+		<action name="bookSearch" class="action.BookBorrowAction" method="search">
+			<result name="error">/jsp/BookBorrow.jsp</result>
+			<result name="success">/jsp/BookBorrow.jsp</result>
+		</action>
+
+		<action name="goBack" class="action.BookListsAction" method="search">
+			<result name="error">/jsp/BookListsInfo.jsp</result>
+			<result name="success">/jsp/BookListsInfo.jsp</result>
+		</action>
+	</package>
+</struts>
+
