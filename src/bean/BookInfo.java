@@ -1,7 +1,5 @@
 package bean;
 
-import java.sql.Date;
-
 public class BookInfo {
 	private String bookCd;
 	private String bookName;

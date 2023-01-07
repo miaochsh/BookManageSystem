@@ -4,10 +4,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
-import bean.BookInfo;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+
+import bean.BookInfo;
 import dao.BookListsDao;
 
 public class BookBorrowAction extends ActionSupport {
@@ -66,7 +66,7 @@ public class BookBorrowAction extends ActionSupport {
 	
 	public String borrow() throws SQLException {
 		ActionContext actionContext = ActionContext.getContext();
-		Map session = actionContext.getSession();
+		Map<String, Object> session = actionContext.getSession();
 		String accountId = String.valueOf(session.get("accountId"));
 		BookListsDao bookListsDao = new BookListsDao();
 		bookListsDao.borrowBooksUpdate(accountId,bookCd,borrowDays);

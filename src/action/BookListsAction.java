@@ -41,7 +41,7 @@ public class BookListsAction extends ActionSupport {
 
 	public String search() throws SQLException {
 		ActionContext actionContext = ActionContext.getContext();
-		Map session = actionContext.getSession();
+		Map<String, Object> session = actionContext.getSession();
 		String accountId = String.valueOf(session.get("accountId"));
 
 		BookListsDao bookListsDao = new BookListsDao();
