@@ -68,9 +68,10 @@
 						<td><s:property value="borrowStartTime" /></td>
 						<td><s:property value="borrowEndTime" /></td>
 						<td><s:if test='%{borrowFlag =="0"}'>
-								<s:textfield name="borrowDays" cssStyle="width:50px;" required="true" maxlength="3"
-								onKeyPress="if(event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;"
-								 onKeyUp="this.value=this.value.replace(/\D/g,'')" />
+								<s:textfield name="borrowDays" cssStyle="width:50px;"
+									required="true" maxlength="3"
+									onKeyPress="if(event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;"
+									onKeyUp="this.value=this.value.replace(/\D/g,'')" />
 							</s:if> <s:else>
 								<s:property value="borrowDays" />
 							</s:else></td>
@@ -80,7 +81,7 @@
 								<s:submit class="back" value="借入" style="width: 80px;" />
 							</s:if> <s:else>
 								<span>借出済</span>
-							</s:else>
+							</s:else> <s:hidden name="bookCd" value="%{bookCd}" />
 					</s:form>
 				</tr>
 			</s:iterator>

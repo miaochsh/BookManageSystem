@@ -3,14 +3,20 @@ package action;
 import java.sql.SQLException;
 import java.util.Map;
 
-import bean.User;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+import bean.User;
 import dao.LoginDao;
 
+/*
+ * ログイン画面
+ * 
+ */
 public class LoginAction extends ActionSupport {
+	
+	// 起動パス：「http://localhost:8080/BookManageSystem/」
+	// git:「https://github.com/miaochsh/BookManageSystem」
 
 	private String accountId;
 	private String password;

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBUtil {
-	private static Connection con ;
+	private static Connection con;
 	private static PreparedStatement ps;
 	private static ResultSet rs;
 

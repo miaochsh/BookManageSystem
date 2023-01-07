@@ -12,6 +12,7 @@ import dao.BookListsDao;
 
 public class BookListsAction extends ActionSupport {
 	private String bookName;
+	private String bookCd;
 	private ArrayList<BookInfo> booksInfoList;
 
 	public ArrayList<BookInfo> getBooksInfoList() {
@@ -30,6 +31,14 @@ public class BookListsAction extends ActionSupport {
 		this.bookName = bookName;
 	}
 
+	public String getBookCd() {
+		return bookCd;
+	}
+
+	public void setBookCd(String bookCd) {
+		this.bookCd = bookCd;
+	}
+
 	public String search() throws SQLException {
 		ActionContext actionContext = ActionContext.getContext();
 		Map session = actionContext.getSession();
@@ -37,6 +46,12 @@ public class BookListsAction extends ActionSupport {
 
 		BookListsDao bookListsDao = new BookListsDao();
 		booksInfoList = bookListsDao.getLendBooks(accountId, bookName);
+		return "success";
+	}
+
+	public String toDelete() throws SQLException {
+		BookListsDao bookListsDao = new BookListsDao();
+		bookListsDao.toDeleteBook(bookCd);
 		return "success";
 	}
 

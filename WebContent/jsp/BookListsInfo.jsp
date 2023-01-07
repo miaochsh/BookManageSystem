@@ -55,16 +55,14 @@
 					<td><s:property value="borrowEndTime" /></td>
 					<td style="text-align: center;"><s:property value="borrowDays" /></td>
 
-					<td style="text-align: center;">
-						<s:form action="toChangeInit">
+					<td style="text-align: center;"><s:form action="toChangeInit">
 							<s:submit class="back" value="変更" style="width: 80px;" />
-						</s:form>
-					</td>
-					<td style="text-align: center;">
-						<s:form action="todele">
+							<s:hidden name="bookCd" value="%{bookCd}" />
+						</s:form></td>
+					<td style="text-align: center;"><s:form action="todele">
 							<s:submit class="back" value="帰還" style="width: 80px;" />
-						</s:form>
-					</td>
+							<s:hidden name="bookCd" value="%{bookCd}" />
+						</s:form></td>
 				</tr>
 			</s:iterator>
 		</table>

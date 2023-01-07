@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
  <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
- 
+
  <validators>
 
  <field name="accountId">
@@ -27,7 +27,7 @@
   <field name="password">
     <field-validator type="stringlength">
     <param name="maxLength">6</param>
-    <message>${getText("msg_company_002",{getText("minlen")})}</message>
+    <message>${getText("msg_company_002",{getText("maxlen")})}</message>
  	</field-validator>
  </field>
 

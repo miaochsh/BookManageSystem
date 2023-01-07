@@ -29,13 +29,33 @@
 			<result name="success" type="chain">BookListsAction</result>
 		</action>
 
+		<action name="todele" class="action.BookListsAction" method="toDelete">
+			<result name="success" type="chain">BookListsAction</result>
+		</action>
+
 		<action name="ToAdd" class="action.BookListsAction" method="toShow">
 			<result name="success">/jsp/BookBorrow.jsp</result>
+		</action>
+
+		<action name="toChangeInit" class="action.BookChangeAction" method="goInit">
+			<result name="success">/jsp/BookChange.jsp</result>
+		</action>
+
+		<action name="ChangeAction" class="action.BookChangeAction" method="goChange">
+			<result name="success" type="chain">BookListsAction</result>
+		</action>
+
+		<action name="returnBookListInfo" class="action.BookChangeAction" method="goReturn">
+			<result name="success" type="chain">BookListsAction</result>
 		</action>
 
 		<action name="bookSearch" class="action.BookBorrowAction" method="search">
 			<result name="error">/jsp/BookBorrow.jsp</result>
 			<result name="success">/jsp/BookBorrow.jsp</result>
+		</action>
+		<action name="bookBorrow" class="action.BookBorrowAction" method="borrow">
+			 <result name="success" type="chain">BookListsAction</result>
+<!-- 			 <result name="error" type="chain">bookSearch</result> -->
 		</action>
 
 		<action name="goBack" class="action.BookListsAction" method="search">

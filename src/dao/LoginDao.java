@@ -15,22 +15,23 @@ public class LoginDao {
 	public LoginDao() {
 		super();
 	}
-	public User getUser(String id)throws SQLException{
-		User us=new User();
-		
+
+	public User getUser(String id) throws SQLException {
+		User us = new User();
+
 		con = DBUtil.getConnect();
-		                                                 
-		String sql="select * from book_manage_db.userinfo where accountId =?";
-		ps=con.prepareStatement(sql);
+
+		String sql = "select * from book_manage_db.userinfo where accountId =?";
+		ps = con.prepareStatement(sql);
 		ps.setString(1, id);
-		rs=ps.executeQuery();
-		while(rs.next()){
+		rs = ps.executeQuery();
+		while (rs.next()) {
 			us.setAccountId(rs.getString("accountId"));
 			us.setPassword(rs.getString("password"));
 			return us;
-		};
+		}
+		;
 		return null;
 	}
-
 
 }
